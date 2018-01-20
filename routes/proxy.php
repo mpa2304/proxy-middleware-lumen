@@ -1,6 +1,6 @@
 <?php
 
-$router->group(['middleware' => ['cors', 'auth']], function () use ($router) {
+$router->group(['middleware' => ['auth']], function () use ($router) {
 	// generic route, several http verbs
 	$uri = '/proxy';
 	$callback = 'ProxyController@request';

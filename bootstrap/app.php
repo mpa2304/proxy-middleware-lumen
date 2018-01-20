@@ -67,8 +67,8 @@ $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
 ]);
 
-$app->routeMiddleware([
-    'cors' => App\Http\Middleware\Cors::class,
+$app->middleware([
+    Vluzrmos\LumenCors\CorsMiddleware::class
 ]);
 
 /*

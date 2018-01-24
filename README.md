@@ -13,8 +13,7 @@ cd /path/to/project
 composer install
 
 
-touch .env
-
+touch .env or mv .env.example1 .env
 
 set the .env variables for your convenience, there is a .env.example1 ready:<br />
 #This is the token to use the auth middleware, you can insert several token in db with the seeder
@@ -30,7 +29,7 @@ REQ_TIMEOUT=60<br />
 <br />
 In case you use sqlite type: 
 
-touch /database/database.sqlite 
+touch database/database.sqlite 
 
 
 Create users table: 

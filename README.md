@@ -18,7 +18,7 @@ touch .env or mv .env.example1 .env
 set the .env variables for your convenience, there is a .env.example1 ready:<br />
 #This is the token to use the auth middleware, you can insert several token in db with the seeder 
 <br />
-DEFAULT_API_TOKEN=PUT-HERE-YOUR-DEFAULT-API-TOKEN
+DEFAULT_API_TOKEN=PUT-HERE-YOUR-DEFAULT-API-TOKEN<br>
 #Name of your company<br />
 COMPANY=Company<br />
 #Name of your project<br />

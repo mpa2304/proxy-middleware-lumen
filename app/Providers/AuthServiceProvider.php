@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Log;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -34,11 +35,16 @@ class AuthServiceProvider extends ServiceProvider
 
         $this->app['auth']->viaRequest('api', function ($request) {
 
-            $api_token = $request->header('Authorization') ? $request->header('Authorization') : $request->input('api_token');
+            $apiToken = $request->header('Authorization') ? $request->header('Authorization') : $request->input('api_token');
 
-            if ($api_token) {
-                return User::where('api_token', $api_token)->first();
+            $users = User::all('id', 'api_token');
+
+            foreach ($users as $user) {
+                if (Hash::check($apiToken, $user->api_token)) {
+                    return User::where('id', $user->id)->first();
+                }    
             }
+            
         });
     }
 }

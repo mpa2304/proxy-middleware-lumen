@@ -45,3 +45,11 @@ php artisan db:seed —class=UsersTableSeeder
 To test locally: 
 
 php -S localhost:8000 -t public
+
+<br>
+Test requests pointing:<br>
+http://localhost:8000/proxy
+<br>
+Headers required: <br>
+X-PROXY-URL: Your url to send request<br>
+Authorization: Your api token (only if auth middleware is in routes/proxy.php)
